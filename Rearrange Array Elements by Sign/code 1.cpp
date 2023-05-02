@@ -1,6 +1,19 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2638
-\cocoatextscaling0\cocoaplatform0{\fonttbl}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-}
+class Solution {
+public:
+    vector<int> rearrangeArray(vector<int>& nums) {
+        int posindx=0;
+        int negindx=1;
+        vector<int> res(nums.size(),0);
+        for(int i=0;i<nums.size();i++){
+            if(nums[i]<0){
+                res[negindx]=nums[i];
+                negindx+=2;
+            }
+            else{
+                res[posindx]=nums[i];
+                posindx+=2;
+            }
+        }
+    return res;
+    }
+};
