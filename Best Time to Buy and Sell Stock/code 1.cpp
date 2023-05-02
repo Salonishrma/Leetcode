@@ -1,6 +1,12 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2638
-\cocoatextscaling0\cocoaplatform0{\fonttbl}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+class Solution {
+public:
+   int maxProfit(vector<int> &prices) {
+  int maxprice=0;
+  int minprice=INT_MAX;
+  for(int i=0;i<prices.size();i++){
+      minprice=min(minprice,prices[i]);
+      maxprice=max(maxprice,prices[i]-minprice);
+  }
+  return maxprice;
 }
+};
