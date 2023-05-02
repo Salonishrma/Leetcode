@@ -1,6 +1,14 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2638
-\cocoatextscaling0\cocoaplatform0{\fonttbl}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-}
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        map<int,int>m1;
+        for(int i=0;i<nums.size();i++){
+           m1[nums[i]]++;
+        }
+        for(auto it:m1){
+            if(it.second>(nums.size()/2))
+            return it.first;
+        }
+        return -1;
+    }
+};
