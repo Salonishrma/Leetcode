@@ -1,6 +1,44 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2638
-\cocoatextscaling0\cocoaplatform0{\fonttbl}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-}
+class Solution {
+public:
+    void setZeroes(vector<vector<int>>& matrix) {
+        int col0 = 1;
+        int n = matrix.size();
+        int m = matrix[0].size();
+
+        for(int i=0; i<n; i++){
+            for(int j=0; j<m; j++){
+                if(matrix[i][j] == 0){
+                    matrix[i][0] = 0;
+
+                    if(j != 0){
+                        matrix[0][j] = 0;
+                    }
+                    else{
+                        col0 = 0;
+                    }
+                }
+            }
+        }
+
+        for(int i=1; i<n; i++){
+            for(int j=1; j<m; j++){
+                if(matrix[i][j] != 0){
+                    if(matrix[i][0] == 0|| matrix[0][j] == 0){
+                        matrix[i][j] = 0;
+                    }
+                }
+            }
+        }
+
+        if(matrix[0][0] == 0){
+            for(int i=0; i<m; i++){
+                matrix[0][i] = 0;
+            }
+        }
+        if(col0 == 0){
+            for(int i=0; i<n; i++){
+                matrix[i][0] = 0;
+            }
+        }
+    }
+};
