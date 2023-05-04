@@ -1,6 +1,17 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2638
-\cocoatextscaling0\cocoaplatform0{\fonttbl}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-}
+lass Solution {
+public:
+    int subarraySum(vector<int>& nums, int k) {
+        int count=0;
+        int sum=0;
+        map<int,int>m1;
+        m1[0]=1;
+        for(int i=0;i<nums.size();i++){
+            sum+=nums[i];
+            int remove=sum-k;
+            if(m1.count(remove))
+                count+=m1[remove];
+                m1[sum]++; 
+        }
+    return count;
+    }
+};
