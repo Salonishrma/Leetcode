@@ -1,6 +1,14 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2638
-\cocoatextscaling0\cocoaplatform0{\fonttbl}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-}
+class Solution {
+public:
+    void rotate(vector<vector<int>>& matrix) {
+         // code here 
+         int n=matrix.size();
+        for(int i=0;i<n;i++){
+            for(int j=0;j<=i;j++){
+                swap(matrix[i][j],matrix[j][i]);
+            }
+        }
+        for(int i=0;i<n;i++)
+        reverse(matrix[i].begin(),matrix[i].end());
+    } 
+};
