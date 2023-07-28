@@ -1,21 +1,6 @@
-class Solution {
-public:
-    bool isAnagram(string s, string t) {
-      int n=s.size();
-      int m=t.size();
-      if(m!=n){
-          return false;
-      }
-      map<int,int>m1;
-       map<int,int>m2;
-       for(int i=0;i<n;i++){
-           m1[s[i]]++;
-       }
-       for(int i=0;i<m;i++){
-           m2[t[i]]++;
-       }
-       if(m1!=m2)
-       return false;
-       return true;
-    }
-};
+{\rtf1\ansi\ansicpg1252\cocoartf2638
+\cocoatextscaling0\cocoaplatform0{\fonttbl}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+}
