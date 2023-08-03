@@ -1,6 +1,29 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2638
-\cocoatextscaling0\cocoaplatform0{\fonttbl}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-}
+// solution 1
+#include<bits/stdc++.h>
+class Solution {
+public:
+    bool rotateString(string s, string goal) {
+        if(s.size()!=goal.size()){
+            return false;
+        }
+        string ans=s+s;
+     if((ans).find(goal)<ans.size())
+     return true;
+     return false;
+    }
+};
+
+//solution 2
+#include<bits/stdc++.h>
+class Solution {
+public:
+    bool rotateString(string s, string goal) {
+        if(s.size()!=goal.size()){
+            return false;
+        }
+      
+     if((s+s).find(goal)!=string::npos)
+        return true;
+     return false;
+    }
+};
