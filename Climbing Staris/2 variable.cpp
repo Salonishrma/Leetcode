@@ -1,6 +1,16 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2638
-\cocoatextscaling0\cocoaplatform0{\fonttbl}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-}
+class Solution {
+public:
+    int climbStairs(int n){
+     if(n==0 or n==1){
+     return 1;
+    }
+    int prev1=1;
+    int prev2=1;
+    for (int i = 2; i <= n; i++){
+        int curr=prev1+prev2;
+        prev2=prev1;
+        prev1=curr;
+    }
+    return prev1;
+    }
+};
