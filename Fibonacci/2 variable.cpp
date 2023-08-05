@@ -1,6 +1,15 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2638
-\cocoatextscaling0\cocoaplatform0{\fonttbl}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-}
+class Solution {
+public:
+    int fib(int n) {
+      if(n<2)
+      return n;
+      int prev1=1;
+      int prev2=0;
+      for(int i=2;i<=n;i++){
+       int current= prev1+prev2;
+         prev2=prev1;
+         prev1= current;
+      }
+      return prev1;
+    }
+};
