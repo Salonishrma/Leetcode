@@ -1,6 +1,12 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2638
-\cocoatextscaling0\cocoaplatform0{\fonttbl}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-}
+class Solution {
+public:
+    int climbStairs(int n){
+     vector<int>dp(n+1,-1);
+     dp[0]=1;
+     dp[1]=1;
+     for(int i=2;i<=n;i++){
+         dp[i]=dp[i-1]+dp[i-2];
+     }
+     return dp[n];
+    }
+};
