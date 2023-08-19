@@ -1,6 +1,19 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2638
-\cocoatextscaling0\cocoaplatform0{\fonttbl}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-}
+class Solution {
+public:
+    string longestCommonPrefix(vector<string>& strs) {
+       int n=strs.size();
+       if(n==0){
+           return 0;
+       }
+       string ans=strs[0];
+       for(int i=1;i<n;i++){
+           while(strs[i].find(ans)!=0){
+               ans=ans.substr(0,ans.length()-1);
+           }
+           if(ans.empty()){
+               return "";
+           }
+       }
+       return ans;
+    }
+};
