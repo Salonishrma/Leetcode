@@ -1,6 +1,15 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2638
-\cocoatextscaling0\cocoaplatform0{\fonttbl}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-}
+class Solution {
+public:
+    TreeNode* searchBST(TreeNode* root, int val) {
+        if(root==NULL){
+            return 0;
+        }
+        if(root->val==val){
+            return root;
+        }
+        if(val<root->val)
+            return searchBST(root->left,val);
+         return searchBST(root->right,val);
+        
+    }
+};
