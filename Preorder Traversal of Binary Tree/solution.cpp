@@ -1,6 +1,19 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2638
-\cocoatextscaling0\cocoaplatform0{\fonttbl}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-}
+class Solution {
+public:
+    vector<int>v1;
+    void function(TreeNode* root){
+      v1.push_back(root->val);
+      if(root->left){
+        function(root->left);
+      }
+      if(root->right){
+        function(root->right);
+      }
+    }
+    vector<int> preorderTraversal(TreeNode* root) {
+      if(root==NULL)
+      return v1;
+      function(root);
+      return v1;
+    }
+};
