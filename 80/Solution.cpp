@@ -1,34 +1,13 @@
-c++
-#include <iostream>
-#include <vector>
-
-using namespace std;
-
-void find_position(int L, int W, vector<vector<int>>& A, int H) {
-    int i = 0, j = 0;
-    for (i = 0; i < L; i++) {
-        for (j = 0; j < W; j++) {
-            if (A[i][j] < H) {
-                break;
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        int ptr =0;
+        for(int i=0;i<nums.size();i++){
+            if(ptr<2 || nums[i]>nums[ptr-2]){ 
+                nums[ptr]=nums[i];
+                ptr++;
             }
         }
-        if (j < W) {
-            break;
-        }
+        return ptr;
     }
-    cout << i + 1 << " " << j + 1 << endl;
-}
-
-int main() {
-    int L, W, H;
-    cin >> L >> W;
-    vector<vector<int>> A(L, vector<int>(W));
-    for (int i = 0; i < L; i++) {
-        for (int j = 0; j < W; j++) {
-            cin >> A[i][j];
-        }
-    }
-    cin >> H;
-    find_position(L, W, A, H);
-    return 0;
-}
+};
